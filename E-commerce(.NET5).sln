@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E-commerce(.NET5)", "E-commerce(.NET5)\E-commerce(.NET5).csproj", "{34F27CE2-BA05-407E-8679-119D97A0B358}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetViewStates", "AspNetViewStates\AspNetViewStates.csproj", "{FE64E4E3-C0D7-4191-8DB9-2EE25E493AB5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{34F27CE2-BA05-407E-8679-119D97A0B358}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34F27CE2-BA05-407E-8679-119D97A0B358}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34F27CE2-BA05-407E-8679-119D97A0B358}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34F27CE2-BA05-407E-8679-119D97A0B358}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE64E4E3-C0D7-4191-8DB9-2EE25E493AB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE64E4E3-C0D7-4191-8DB9-2EE25E493AB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE64E4E3-C0D7-4191-8DB9-2EE25E493AB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE64E4E3-C0D7-4191-8DB9-2EE25E493AB5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CBBE72D4-B5AB-4C9F-B0BF-56C50B186E6C}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,139 @@
+﻿@model IEnumerable<Category>
+
+@{
+    ViewData["Title"] = "Kategoriyalar";
+}
+
+<div class="page-header">
+    <div class="row align-items-end">
+        <div class="col-lg-8">
+            <div class="page-header-title">
+                <div class="d-inline">
+                    <h4>Kategoriyalar</h4>
+                    <span>
+                        lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="page-header-breadcrumb">
+                <ul class="breadcrumb-title">
+                    <li class="breadcrumb-item" style="float: left;">
+                        <a href="../index.html"> <i class="feather icon-home"></i> </a>
+                    </li>
+                    <li class="breadcrumb-item" style="float: left;">
+                        <a href="#!">Kategoriyalar</a>
+                    </li>
+                    <li class="breadcrumb-item" style="float: left;">
+                        <a href="#!">Border Table</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page-header end -->
+<!-- Page-body start -->
+<div class="page-body">
+    <!-- Horizontal-border table start -->
+    <div class="card">
+        <div class="card-header">
+            <h5>Kategoriyalar</h5>
+            @* <span>
+            Example of <code>horizontal</code> table borders. This is a
+            default table border style attached to <code>.table</code> class.
+            All borders have the same grey color and style, table itself doesn't
+            have a border, but you can add this border using
+            <code>.table-framed</code> class added to the table with
+            <code>.table</code> class.
+            </span>*@
+
+        </div>
+        <div class="card-block table-border-style">
+            <div class="table-responsive">
+                <table class="table table-framed tree">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Name)
+                            </th>
+
+
+                            <th class="operate-cell">
+                                <a class="btn btn-sm btn-success btn-outline-success" asp-action="Create"><i class="fa-solid fa-plus"></i></a>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Where(c=>c.ParentId==null))
+                        {
+                            <tr class="treegrid-@item.Id">
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+
+                                <td class="operate-cell">
+                                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning btn-outline-warning">
+                                        <i class="fa-regular fa-pen-to-square"></i>
+                                    </a>
+                                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-inverse btn-outline-inverse">
+                                        <i class="fa-solid fa-circle-info"></i>
+                                    </a>
+                                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger btn-outline-danger">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            @foreach (var child in item.GetAllChildren())
+                            {
+                                <tr class="treegrid-@child.Id treegrid-parent-@child.ParentId">
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => child.Name)
+                                    </td>
+
+                                    <td class="operate-cell">
+                                        <a asp-action="Edit" asp-route-id="@child.Id" class="btn btn-sm btn-warning btn-outline-warning">
+                                            <i class="fa-regular fa-pen-to-square"></i>
+                                        </a>
+                                        <a asp-action="Details" asp-route-id="@child.Id" class="btn btn-sm btn-inverse btn-outline-inverse">
+                                            <i class="fa-solid fa-circle-info"></i>
+                                        </a>
+                                        <a asp-action="Delete" asp-route-id="@child.Id" class="btn btn-sm btn-danger btn-outline-danger">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+
+                        }
+
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@section addcss{
+    <link href="~/libs/jquery-treegrid/css/jquery.treegrid.css" rel="stylesheet" />
+
+}
+
+
+    @section addjs{
+    <script src="~/libs/jquery-treegrid/js/jquery.treegrid.js"></script>
+
+    <script type="text/javascript">
+        $('.tree').treegrid();
+
+    </script>
+}
