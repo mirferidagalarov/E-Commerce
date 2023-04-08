@@ -169,6 +169,10 @@ C:\Users\Lenovo\source\repos\E-commerce(.NET5)\E-commerce(.NET5)\obj\Debug\net5.
 C:\Users\Lenovo\source\repos\E-commerce(.NET5)\E-commerce(.NET5)\obj\Debug\net5.0\Razor\Areas\Admin\Views\ProductSizes\Edit.cshtml.g.cs
 C:\Users\Lenovo\source\repos\E-commerce(.NET5)\E-commerce(.NET5)\obj\Debug\net5.0\Razor\Areas\Admin\Views\ProductSizes\Index.cshtml.g.cs
 C:\Users\Lenovo\source\repos\E-commerce(.NET5)\E-commerce(.NET5)\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\Lenovo\source\repos\E-commerce(.NET5)\E-commerce(.NET5)\obj\Debug\net5.0\Razor\Areas\Admin\Views\Specifications\Create.cshtml.g.cs
+C:\Users\Lenovo\source\repos\E-commerce(.NET5)\E-commerce(.NET5)\obj\Debug\net5.0\Razor\Areas\Admin\Views\Specifications\Details.cshtml.g.cs
+C:\Users\Lenovo\source\repos\E-commerce(.NET5)\E-commerce(.NET5)\obj\Debug\net5.0\Razor\Areas\Admin\Views\Specifications\Edit.cshtml.g.cs
+C:\Users\Lenovo\source\repos\E-commerce(.NET5)\E-commerce(.NET5)\obj\Debug\net5.0\Razor\Areas\Admin\Views\Specifications\Index.cshtml.g.cs
 C:\Users\Lenovo\source\repos\E-commerce(.NET5)\E-commerce(.NET5)\obj\Debug\net5.0\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
 C:\Users\Lenovo\source\repos\E-commerce(.NET5)\E-commerce(.NET5)\obj\Debug\net5.0\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs
 C:\Users\Lenovo\source\repos\E-commerce(.NET5)\E-commerce(.NET5)\obj\Debug\net5.0\Razor\Views\Account\Profile.cshtml.g.cs

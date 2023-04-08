@@ -78,6 +78,38 @@
             height:20px;
             margin-right:5px;
         }
+
+        .pagination{
+            float:right;
+        }
+
+        .pagination li{
+            margin-right:0;
+            display:inline-block;
+        }
+        .pagination li a{
+            padding:20px;
+            display:inline-block;
+            user-select:none;
+            padding:10px 15px;
+            display:inline-blocak;
+            border:0.5px solid #dee2e6;
+        }
+        .pagination li:first child a{
+            border-radius:5px 0 0 5px;
+        }
+        .pagination li:not(:last-child) a{
+            border-right:none;
+        }
+         .pagination li:last child a{
+             border-radius:0 5px 5px 0;
+         }
+
+        .pagination li.active a{
+            background-color:#01a9ac;
+            border-color:#01a9ac;
+            color:#ffffff;
+        }
        
     </style>
 
@@ -457,6 +489,12 @@
                                     <a asp-controller="Categories" asp-action="index">
                                        <span class="pcoded-micon"<i class="feather icon-feather"></i></span>
                                         <span class="pcoded-mtext">@Sidebar.Categories</span>
+                                    </a>
+                                </li>
+                                 <li>
+                                    <a asp-controller="Specifications" asp-action="index">
+                                       <span class="pcoded-micon"<i class="feather icon-feather"></i></span>
+                                        <span class="pcoded-mtext">@Sidebar.Specification</span>
                                     </a>
                                 </li>
 

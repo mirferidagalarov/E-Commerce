@@ -56,13 +56,20 @@ using E_commerce_.NET5_.AppCode.Application.BrandModule;
 #nullable disable
 #nullable restore
 #line 8 "C:\Users\Lenovo\source\repos\E-commerce(.NET5)\E-commerce(.NET5)\Areas\Admin\Views\_ViewImports.cshtml"
+using E_commerce_.NET5_.AppCode.Application.SpecificationModule;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 9 "C:\Users\Lenovo\source\repos\E-commerce(.NET5)\E-commerce(.NET5)\Areas\Admin\Views\_ViewImports.cshtml"
 using Resources;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5a0e82581a3f6348a6cca98fd2893c7e86d79f0d", @"/Areas/Admin/Views/ProductColors/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"02a329ffc76bf20eb63e3f674f32f4d5239fcefb", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ebf09a2acf6479d6ac41476fb6009179d531365c", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_Admin_Views_ProductColors_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<ProductColor>>
     #nullable disable
@@ -173,7 +180,7 @@ using Resources;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                            </th>\r\n                        \r\n                            <th class=\"operate-cell\">\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5a0e82581a3f6348a6cca98fd2893c7e86d79f0d10203", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5a0e82581a3f6348a6cca98fd2893c7e86d79f0d10452", async() => {
                 WriteLiteral("<i class=\"fa-solid fa-plus\"></i>");
             }
             );
@@ -226,7 +233,7 @@ WriteAttributeValue("", 3274, item.HexCode, 3274, 13, false);
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                                </td>\r\n                       \r\n                                <td class=\"operate-cell\">\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5a0e82581a3f6348a6cca98fd2893c7e86d79f0d13581", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5a0e82581a3f6348a6cca98fd2893c7e86d79f0d13830", async() => {
                 WriteLiteral("\r\n                                        <i class=\"fa-regular fa-pen-to-square\"></i>\r\n                                    ");
             }
             );
@@ -258,7 +265,7 @@ WriteAttributeValue("", 3274, item.HexCode, 3274, 13, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5a0e82581a3f6348a6cca98fd2893c7e86d79f0d16023", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5a0e82581a3f6348a6cca98fd2893c7e86d79f0d16272", async() => {
                 WriteLiteral("\r\n                                        <i class=\"fa-solid fa-circle-info\"></i>\r\n                                    ");
             }
             );
@@ -290,7 +297,7 @@ WriteAttributeValue("", 3274, item.HexCode, 3274, 13, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5a0e82581a3f6348a6cca98fd2893c7e86d79f0d18464", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5a0e82581a3f6348a6cca98fd2893c7e86d79f0d18713", async() => {
                 WriteLiteral("\r\n                                        <i class=\"fa-solid fa-trash\"></i>\r\n                                    ");
             }
             );

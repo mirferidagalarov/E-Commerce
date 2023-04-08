@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace E_commerce_.NET5_.AppCode.Application.BrandModule
+namespace E_commerce_.NET5_.AppCode.Application. BrandModule
 {
     public class BrandCreateCommand:IRequest<int>
     {
@@ -15,11 +15,11 @@ namespace E_commerce_.NET5_.AppCode.Application.BrandModule
         public string Name { get; set; }
         public string Description { get; set; }
 
-        public class BrandCreateCommandHandler : IRequestHandler<BrandCreateCommand, int>
+        public class  BrandCreateCommandHandler : IRequestHandler<BrandCreateCommand, int>
         {
             readonly Dbcontext _dbcontext;
             readonly IActionContextAccessor _accessor;
-            public BrandCreateCommandHandler(Dbcontext dbcontext, IActionContextAccessor accessor  )
+            public  BrandCreateCommandHandler(Dbcontext dbcontext, IActionContextAccessor accessor  )
             {
                 _dbcontext = dbcontext;
                 _accessor = accessor;
@@ -29,13 +29,13 @@ namespace E_commerce_.NET5_.AppCode.Application.BrandModule
             {
                 if (_accessor.IsModelStateValid())
                 {
-                    Brand brand = new Brand();
-                    brand.Name = request.Name;
-                    brand.Description = request.Description;
+                     Brand  Brand = new  Brand();
+                     Brand.Name = request.Name;
+                     Brand.Description = request.Description;
 
-                    _dbcontext.Add(brand);
+                    _dbcontext.Add( Brand);
                     await _dbcontext.SaveChangesAsync(cancellationToken);
-                    return brand.Id;
+                    return  Brand.Id;
                 }
                 return 0;
 

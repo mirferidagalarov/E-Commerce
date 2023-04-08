@@ -8,14 +8,14 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace E_commerce_.NET5_.AppCode.Application.BrandModule
+namespace E_commerce_.NET5_.AppCode.Application. BrandModule
 {
-    public class BrandEditCommand: BrandViewModel,IRequest<int>
+    public class  BrandEditCommand: BrandViewModel,IRequest<int>
     {
        
 
 
-        public class BranEditCommandHandler : IRequestHandler<BrandEditCommand, int>
+        public class BranEditCommandHandler : IRequestHandler< BrandEditCommand, int>
         {
             readonly Dbcontext _dbcontext;
             readonly IActionContextAccessor _accessor;
@@ -24,13 +24,13 @@ namespace E_commerce_.NET5_.AppCode.Application.BrandModule
                 _dbcontext = dbcontext;
                 _accessor = accessor;
             }
-            public async Task<int> Handle(BrandEditCommand request, CancellationToken cancellationToken)
+            public async Task<int> Handle( BrandEditCommand request, CancellationToken cancellationToken)
             {
                 if (request.Id==null||request.Id<0)
                 {
                     return 0;
                 }
-                var entity=await _dbcontext.Brands.FirstOrDefaultAsync(b=>b.Id==request.Id &&b.DeletedByUserId==null);
+                var entity=await _dbcontext. Brands.FirstOrDefaultAsync(b=>b.Id==request.Id &&b.DeletedByUserId==null);
                 if (entity==null)                
                     return 0;
 

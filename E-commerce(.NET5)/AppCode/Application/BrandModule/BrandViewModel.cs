@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace E_commerce_.NET5_.AppCode.Application.BrandModule
+namespace E_commerce_.NET5_.AppCode.Application. BrandModule
 {
     public class BrandViewModel
     {

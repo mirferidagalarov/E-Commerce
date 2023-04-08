@@ -49,20 +49,13 @@ using E_commerce_.NET5_.AppCode.Extensions;
 #nullable disable
 #nullable restore
 #line 7 "C:\Users\Lenovo\source\repos\E-commerce(.NET5)\E-commerce(.NET5)\Views\_ViewImports.cshtml"
-using E_commerce_.NET5_.AppCode.Application.BrandModule;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 8 "C:\Users\Lenovo\source\repos\E-commerce(.NET5)\E-commerce(.NET5)\Views\_ViewImports.cshtml"
 using Resource;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6e5aa05d0d512aa9a773af7999f7861f7ef004c7", @"/Views/Shop/_ProductContainer.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"55dd7d60bb854369693685ebea7beadf37805637", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"54cd8a0c02b885d4d4e222f1cba377fcef620c27", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Shop__ProductContainer : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<Product>>
     #nullable disable
@@ -113,9 +106,9 @@ using Resource;
 #line hidden
 #nullable disable
             WriteLiteral("    <div class=\"product\">\r\n        <figure class=\"product-media\">\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6e5aa05d0d512aa9a773af7999f7861f7ef004c77834", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6e5aa05d0d512aa9a773af7999f7861f7ef004c77605", async() => {
                 WriteLiteral("\r\n                ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "6e5aa05d0d512aa9a773af7999f7861f7ef004c78105", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "6e5aa05d0d512aa9a773af7999f7861f7ef004c77876", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -174,7 +167,7 @@ AddHtmlAttributeValue("", 301, imagePath, 301, 10, false);
                 <a href=""#"" class="" btn-wishlist""
                title=""Add to wishlist""><i class=""d-icon-heart""></i></a>
                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6e5aa05d0d512aa9a773af7999f7861f7ef004c711964", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6e5aa05d0d512aa9a773af7999f7861f7ef004c711735", async() => {
                 WriteLiteral("\r\n                    <i class=\"d-icon-search\"></i>\r\n                    <label>Quick View</label>\r\n                ");
             }
             );
@@ -202,7 +195,7 @@ AddHtmlAttributeValue("", 301, imagePath, 301, 10, false);
             </div>
             <h3 class=""product-name"">
                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6e5aa05d0d512aa9a773af7999f7861f7ef004c713877", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6e5aa05d0d512aa9a773af7999f7861f7ef004c713648", async() => {
 #nullable restore
 #line 35 "C:\Users\Lenovo\source\repos\E-commerce(.NET5)\E-commerce(.NET5)\Views\Shop\_ProductContainer.cshtml"
                                                     Write(item.Name);
@@ -240,7 +233,7 @@ AddHtmlAttributeValue("", 301, imagePath, 301, 10, false);
                     <span class=""tooltiptext tooltip-top""></span>
                 </div>
                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6e5aa05d0d512aa9a773af7999f7861f7ef004c716203", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6e5aa05d0d512aa9a773af7999f7861f7ef004c715974", async() => {
                 WriteLiteral("( 16 reviews )");
             }
             );
