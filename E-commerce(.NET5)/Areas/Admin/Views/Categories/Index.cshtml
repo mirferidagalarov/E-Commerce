@@ -62,12 +62,17 @@
 
 
                             <th class="operate-cell">
-                                <a class="btn btn-sm btn-success btn-outline-success" asp-action="Create"><i class="fa-solid fa-plus"></i></a>
+                               @* @if (User.HasClaim(c => c.Type.Equals("admin.categories.create") && c.Value.Equals("1")))*@
+                                @if (User.HasAccess("admin.categories.create"))
+                                {
+                                    <a class="btn btn-sm btn-success btn-outline-success" asp-action="Create"><i class="fa-solid fa-plus"></i></a>
+                                }
+
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var item in Model.Where(c=>c.ParentId==null))
+                        @foreach (var item in Model.Where(c => c.ParentId == null))
                         {
                             <tr class="treegrid-@item.Id">
 
@@ -76,15 +81,26 @@
                                 </td>
 
                                 <td class="operate-cell">
-                                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning btn-outline-warning">
-                                        <i class="fa-regular fa-pen-to-square"></i>
-                                    </a>
-                                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-inverse btn-outline-inverse">
-                                        <i class="fa-solid fa-circle-info"></i>
-                                    </a>
-                                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger btn-outline-danger">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </a>
+                                    @if (User.HasAccess("admin.categories.edit"))
+                                    {
+                                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning btn-outline-warning">
+                                            <i class="fa-regular fa-pen-to-square"></i>
+                                        </a>
+                                    }
+                                    @if (User.HasAccess("admin.categories.details"))
+                                    {
+                                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-inverse btn-outline-inverse">
+                                            <i class="fa-solid fa-circle-info"></i>
+                                        </a>
+                                    }
+                                    @if (User.HasAccess("admin.categories.delete"))
+                                    {
+                                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger btn-outline-danger">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </a>
+                                    }
+
+
                                 </td>
                             </tr>
                             @foreach (var child in item.GetAllChildren())

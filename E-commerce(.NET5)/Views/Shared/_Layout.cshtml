@@ -66,11 +66,21 @@
                         <span class="divider"></span>
                         <a asp-controller="home" asp-action="contact" class="contact d-lg-show"><i class="d-icon-map"></i>Contact</a>
                         <a href="#" class="help d-lg-show"><i class="d-icon-info"></i> Need Help</a>
-                        <a class="login-link" href="ajax/login.html" data-toggle="login-modal">
-                            <i class="d-icon-user"></i>Sign in
-                        </a>
-                        <span class="delimiter">/</span>
-                        <a class="register-link ml-0" href="ajax/login.html" data-toggle="login-modal">Register</a>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <a class="login-link" asp-controller="Account" asp-action="Profile">
+                                <i class="d-icon-user"></i>@User.GetPrincipalName()
+                            </a>
+                        }
+                        else
+                        {
+                            <a class="login-link" asp-controller="Account" asp-action="SignIn">
+                                <i class="d-icon-user"></i>Sign in
+                            </a>
+                            <span class="delimiter">/</span>
+                            <a class="register-link ml-0" asp-controller="Account" asp-action="Register">Register</a>
+                        }
+
                         <!-- End of Login -->
                     </div>
                 </div>
@@ -343,7 +353,7 @@
                                       asp-action="Subscribe"
                                       class="input-wrapper input-wrapper-inline"
                                       id="frmSubscribe">
-                                    <input type="email" 
+                                    <input type="email"
                                            class="form-control"
                                            name="email"
                                            id="email"
@@ -790,25 +800,23 @@
                 errorElement: 'span'
             });
 
-            const lang =`@Context.GetCurrentCulture()`;
+            const lang = `@Context.GetCurrentCulture()`;
             const selectedLanText = $(`[data-lang="${lang}"]`).text();
 
             $(`[data-lang-viewer="language"]`).text(selectedLanText);
 
-            $('[data-lang]').click(function(e){
+            $('[data-lang]').click(function (e) {
                 e.preventDefault();
-                let path=`${window.location.pathname}${window.location.search}`;
-                let selectedLang=$(e.currentTarget).data('lang');
-                let result= /\/(en|az|ru)?\/?(.*)?/.exec(path);
-                if(result!=null && result[2] !=undefined)
-                {
+                let path = `${window.location.pathname}${window.location.search}`;
+                let selectedLang = $(e.currentTarget).data('lang');
+                let result = /\/(en|az|ru)?\/?(.*)?/.exec(path);
+                if (result != null && result[2] != undefined) {
                     path = `/${selectedLang}/${result[2]}`;
                 }
-                else if(result!=null)
-                {
+                else if (result != null) {
                     path = `/${selectedLang}`;
                 }
-               window.location.href=path;
+                window.location.href = path;
 
             })
         });

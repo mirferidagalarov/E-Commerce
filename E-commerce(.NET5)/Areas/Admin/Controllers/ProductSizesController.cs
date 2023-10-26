@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using E_commerce_.NET5_.Models.Entities;
 using e_commerce_.net5.Models.DataContext;
+using Microsoft.AspNetCore.Authorization;
 
 namespace E_commerce_.NET5_.Areas.Admin.Controllers
 {
@@ -20,13 +21,13 @@ namespace E_commerce_.NET5_.Areas.Admin.Controllers
             _context = context;
         }
 
-        // GET: Admin/ProductSizes
+        [Authorize(Policy = "admin.productsizes.index")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.ProductSizes.ToListAsync());
         }
 
-        // GET: Admin/ProductSizes/Details/5
+        [Authorize(Policy = "admin.productsizes.details")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -44,17 +45,16 @@ namespace E_commerce_.NET5_.Areas.Admin.Controllers
             return View(productSize);
         }
 
-        // GET: Admin/ProductSizes/Create
+        [Authorize(Policy = "admin.productsizes.create")]
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Admin/ProductSizes/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+     
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "admin.productsizes.create")]
         public async Task<IActionResult> Create([Bind("Abbr,Name,Description,Id,CreatedByUserId,CreatedDate,DeletedByUserId,DeletedDate")] ProductSize productSize)
         {
             if (ModelState.IsValid)
@@ -66,7 +66,7 @@ namespace E_commerce_.NET5_.Areas.Admin.Controllers
             return View(productSize);
         }
 
-        // GET: Admin/ProductSizes/Edit/5
+        [Authorize(Policy = "admin.productsizes.edit")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -82,11 +82,10 @@ namespace E_commerce_.NET5_.Areas.Admin.Controllers
             return View(productSize);
         }
 
-        // POST: Admin/ProductSizes/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+      
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "admin.productsizes.edit")]
         public async Task<IActionResult> Edit(int id, [Bind("Abbr,Name,Description,Id,CreatedByUserId,CreatedDate,DeletedByUserId,DeletedDate")] ProductSize productSize)
         {
             if (id != productSize.Id)
@@ -117,7 +116,7 @@ namespace E_commerce_.NET5_.Areas.Admin.Controllers
             return View(productSize);
         }
 
-        // GET: Admin/ProductSizes/Delete/5
+        [Authorize(Policy = "admin.productsizes.delete")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -135,9 +134,10 @@ namespace E_commerce_.NET5_.Areas.Admin.Controllers
             return View(productSize);
         }
 
-        // POST: Admin/ProductSizes/Delete/5
+        
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "admin.productsizes.delete")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var productSize = await _context.ProductSizes.FindAsync(id);

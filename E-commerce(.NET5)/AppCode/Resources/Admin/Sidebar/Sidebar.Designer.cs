@@ -113,5 +113,14 @@ namespace Resources {
                 return ResourceManager.GetString("Specification", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to İstifadəçilər.
+        /// </summary>
+        public static string Users {
+            get {
+                return ResourceManager.GetString("Users", resourceCulture);
+            }
+        }
     }
 }

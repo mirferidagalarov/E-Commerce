@@ -63,13 +63,20 @@ using E_commerce_.NET5_.AppCode.Application.SpecificationModule;
 #nullable disable
 #nullable restore
 #line 9 "C:\Users\Lenovo\source\repos\E-commerce(.NET5)\E-commerce(.NET5)\Areas\Admin\Views\_ViewImports.cshtml"
+using E_commerce_.NET5_.Models.Entities.Membership;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 10 "C:\Users\Lenovo\source\repos\E-commerce(.NET5)\E-commerce(.NET5)\Areas\Admin\Views\_ViewImports.cshtml"
 using Resources;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d855b41be0d3883a1cc8645db329c2b7b682e72e", @"/Areas/Admin/Views/Specifications/Create.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ebf09a2acf6479d6ac41476fb6009179d531365c", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"afcb4550d67e5be0ceb6692d9bef723967835876", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_Admin_Views_Specifications_Create : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<SpecificationCreateCommand>
     #nullable disable
@@ -169,7 +176,7 @@ using Resources;
                 <div class=""card-block"">
                     <h4 class=""sub-title"">Basic Inputs</h4>
                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d855b41be0d3883a1cc8645db329c2b7b682e72e9161", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d855b41be0d3883a1cc8645db329c2b7b682e72e9398", async() => {
                 WriteLiteral(@"
                        
                         <div class=""form-group row"">
@@ -178,7 +185,7 @@ using Resources;
                             </label>
                             <div class=""col-sm-10"">
                                 ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d855b41be0d3883a1cc8645db329c2b7b682e72e9733", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d855b41be0d3883a1cc8645db329c2b7b682e72e9970", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -200,7 +207,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                                ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d855b41be0d3883a1cc8645db329c2b7b682e72e11368", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d855b41be0d3883a1cc8645db329c2b7b682e72e11605", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationMessageTagHelper>();
@@ -228,7 +235,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper.For = ModelExpr
                             <div class=""col-12"">
                                 <button type=""submit"" class=""btn btn-success"">Yadda saxla</button>
                                 ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d855b41be0d3883a1cc8645db329c2b7b682e72e13381", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d855b41be0d3883a1cc8645db329c2b7b682e72e13618", async() => {
                     WriteLiteral("Siyahıya qayıt");
                 }
                 );

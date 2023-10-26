@@ -2,6 +2,7 @@
 using E_commerce_.NET5_.AppCode.Application.BrandModule;
 using E_commerce_.NET5_.Models.Entities;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
@@ -20,13 +21,14 @@ namespace E_commerce_.NET5_.Areas.Admin.Controllers
             _context = context;
         }
 
-        // GET: Admin/ Brand
+
+        [Authorize(Policy="admin.brands.index")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Brands.Where(m=>m.DeletedByUserId==null).ToListAsync());
         }
 
-        // GET: Admin/ Brand/Details/5
+        [Authorize(Policy = "admin.brands.details")]
         public async Task<IActionResult> Details(BrandSingleQuery query)
         {
 
@@ -39,17 +41,16 @@ namespace E_commerce_.NET5_.Areas.Admin.Controllers
             return View( Brand);
         }
 
-        // GET: Admin/ Brand/Create
+        [Authorize(Policy = "admin.brands.create")]
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Admin/ Brand/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+     
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "admin.brands.create")]
         public async Task<IActionResult> Create(BrandCreateCommand request)
         {
             int id=await _mediator.Send(request);
@@ -61,7 +62,7 @@ namespace E_commerce_.NET5_.Areas.Admin.Controllers
             return View(request);
         }
 
-        // GET: Admin/ Brand/Edit/5
+        [Authorize(Policy = "admin.brands.edit")]
         public async Task<IActionResult> Edit(BrandSingleQuery query)
         {
 
@@ -79,11 +80,10 @@ namespace E_commerce_.NET5_.Areas.Admin.Controllers
             return View(vm);
         }
 
-        // POST: Admin/ Brand/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "admin.brands.edit")]
         public async Task<IActionResult> Edit( BrandEditCommand request)
         {
             int id=await _mediator.Send(request);
@@ -94,7 +94,9 @@ namespace E_commerce_.NET5_.Areas.Admin.Controllers
             return View(request);
         }
 
-         [HttpPost]
+       
+        [HttpPost]
+        [Authorize(Policy = "admin.brands.delete")]
         public async Task<IActionResult> Delete(BrandRemoveCommand request)
         {
            

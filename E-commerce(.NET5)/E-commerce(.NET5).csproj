@@ -93,6 +93,8 @@
   <ItemGroup>
     <PackageReference Include="MediatR" Version="9.0.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.10" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.17" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.17" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.17">
@@ -123,7 +125,6 @@
     <Folder Include="wwwroot\admin\bower_components\datedropper\js\" />
     <Folder Include="wwwroot\admin\bower_components\i18next-browser-languagedetector\js\" />
     <Folder Include="wwwroot\admin\bower_components\jquery-bar-rating\css\" />
-    <Folder Include="wwwroot\libs\" />
   </ItemGroup>
 
   <ItemGroup>

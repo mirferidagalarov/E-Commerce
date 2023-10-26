@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using E_commerce_.NET5_.Models.Entities;
 using e_commerce_.net5.Models.DataContext;
+using Microsoft.AspNetCore.Authorization;
 
 namespace E_commerce_.NET5_.Areas.Admin.Controllers
 {
@@ -20,13 +21,15 @@ namespace E_commerce_.NET5_.Areas.Admin.Controllers
             _context = context;
         }
 
-        // GET: Admin/ProductColors
+        
+        [Authorize(Policy = "admin.productcolors.index")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.ProductColors.ToListAsync());
         }
 
-        // GET: Admin/ProductColors/Details/5
+       
+        [Authorize(Policy = "admin.productcolors.details")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -44,17 +47,17 @@ namespace E_commerce_.NET5_.Areas.Admin.Controllers
             return View(productColor);
         }
 
-        // GET: Admin/ProductColors/Create
+      
+        [Authorize(Policy = "admin.productcolors.create")]
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Admin/ProductColors/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+      
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "admin.productcolors.create")]
         public async Task<IActionResult> Create([Bind("HexCode,Name,Description,Id,CreatedByUserId,CreatedDate,DeletedByUserId,DeletedDate")] ProductColor productColor)
         {
             if (ModelState.IsValid)
@@ -66,7 +69,7 @@ namespace E_commerce_.NET5_.Areas.Admin.Controllers
             return View(productColor);
         }
 
-        // GET: Admin/ProductColors/Edit/5
+        [Authorize(Policy = "admin.productcolors.edit")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -82,11 +85,10 @@ namespace E_commerce_.NET5_.Areas.Admin.Controllers
             return View(productColor);
         }
 
-        // POST: Admin/ProductColors/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "admin.productcolors.edit")]
         public async Task<IActionResult> Edit(int id, [Bind("HexCode,Name,Description,Id,CreatedByUserId,CreatedDate,DeletedByUserId,DeletedDate")] ProductColor productColor)
         {
             if (id != productColor.Id)
@@ -117,7 +119,7 @@ namespace E_commerce_.NET5_.Areas.Admin.Controllers
             return View(productColor);
         }
 
-        // GET: Admin/ProductColors/Delete/5
+        [Authorize(Policy = "admin.productcolors.delete")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -135,9 +137,10 @@ namespace E_commerce_.NET5_.Areas.Admin.Controllers
             return View(productColor);
         }
 
-        // POST: Admin/ProductColors/Delete/5
+       
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "admin.productcolors.delete")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var productColor = await _context.ProductColors.FindAsync(id);

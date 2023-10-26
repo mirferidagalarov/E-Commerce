@@ -2,6 +2,7 @@
 using E_commerce_.NET5_.Models.Entities;
 using E_commerce_.NET5_.Models.FormModels;
 using E_commerce_.NET5_.Models.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace e_commerce_.net5.Controllers
         {
            _dbcontext = dbcontext;
         }
-      
+        //[AllowAnonymous]
         public IActionResult Index()
         {
             ShopFilterViewModel vm=new ShopFilterViewModel();
@@ -31,6 +32,7 @@ namespace e_commerce_.net5.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public IActionResult Filter(ShopFilterFormModel model)
         {
             var query = _dbcontext.Products
@@ -60,7 +62,7 @@ namespace e_commerce_.net5.Controllers
             //    data = query.ToList()
             //}) ;
         }
-
+        [AllowAnonymous] 
         public IActionResult Details(int id)
         {
        

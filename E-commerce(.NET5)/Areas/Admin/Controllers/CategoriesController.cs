@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using E_commerce_.NET5_.Models.Entities;
 using e_commerce_.net5.Models.DataContext;
+using Microsoft.AspNetCore.Authorization;
 
 namespace E_commerce_.NET5_.Areas.Admin.Controllers
 {
@@ -20,14 +21,16 @@ namespace E_commerce_.NET5_.Areas.Admin.Controllers
             _context = context;
         }
 
-        // GET: Admin/Categories
+
+        [Authorize(Policy = "admin.categories.index")]
         public async Task<IActionResult> Index()
         {
             var dbcontext = _context.Categories;
             return View(await dbcontext.ToListAsync());
         }
 
-        // GET: Admin/Categories/Details/5
+
+        [Authorize(Policy = "admin.categories.details")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -46,7 +49,8 @@ namespace E_commerce_.NET5_.Areas.Admin.Controllers
             return View(category);
         }
 
-        // GET: Admin/Categories/Create
+      
+        [Authorize(Policy = "admin.categories.create")]
         public IActionResult Create()
         {
             ViewData["ParentId"] = new SelectList(_context.Categories, "Id", "Name");
@@ -54,11 +58,10 @@ namespace E_commerce_.NET5_.Areas.Admin.Controllers
             return View();
         }
 
-        // POST: Admin/Categories/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "admin.categories.create")]
         public async Task<IActionResult> Create([Bind("ParentId,Name,Description,Id,CreatedByUserId,CreatedDate,DeletedByUserId,DeletedDate")] Category category)
         {
             if (ModelState.IsValid)
@@ -71,7 +74,8 @@ namespace E_commerce_.NET5_.Areas.Admin.Controllers
             return View(category);
         }
 
-        // GET: Admin/Categories/Edit/5
+
+        [Authorize(Policy = "admin.categories.edit")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -88,11 +92,10 @@ namespace E_commerce_.NET5_.Areas.Admin.Controllers
             return View(category);
         }
 
-        // POST: Admin/Categories/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+     
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "admin.categories.edit")]
         public async Task<IActionResult> Edit(int id, [Bind("ParentId,Name,Description,Id,CreatedByUserId,CreatedDate,DeletedByUserId,DeletedDate")] Category category)
         {
             if (id != category.Id)
@@ -124,7 +127,8 @@ namespace E_commerce_.NET5_.Areas.Admin.Controllers
             return View(category);
         }
 
-        // GET: Admin/Categories/Delete/5
+  
+        [Authorize(Policy = "admin.categories.delete")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -143,9 +147,11 @@ namespace E_commerce_.NET5_.Areas.Admin.Controllers
             return View(category);
         }
 
-        // POST: Admin/Categories/Delete/5
+      
+     
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "admin.categories.index")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var category = await _context.Categories.FindAsync(id);

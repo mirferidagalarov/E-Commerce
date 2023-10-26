@@ -3,6 +3,7 @@ using e_commerce_.net5.Models.DataContext;
 using e_commerce_.net5.Models.Entities;
 using E_commerce_.NET5_.AppCode.Extensions;
 using E_commerce_.NET5_.Models.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -18,6 +19,7 @@ using System.Threading.Tasks;
 
 namespace e_commerce_.net5.Controllers
 {
+    [AllowAnonymous]
     public class HomeController : Controller
     {
         private readonly Dbcontext _dbcontext;

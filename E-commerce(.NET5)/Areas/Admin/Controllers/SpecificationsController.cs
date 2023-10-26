@@ -3,6 +3,7 @@ using E_commerce_.NET5_.AppCode.Application.SpecificationModule;
 using E_commerce_.NET5_.Models.Entities;
 using E_commerce_.NET5_.Models.ViewModels;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
@@ -21,15 +22,15 @@ namespace E_commerce_.NET5_.Areas.Admin.Controllers
             _context = context;
         }
 
-        // GET: Admin/ Specifications
+        [Authorize(Policy = "admin.specification.index")]
         public async Task<IActionResult> Index(SpecificationPagedQuery query)
         {
             var response = await _mediator.Send(query);
-           
+
             return View(response);
         }
 
-        // GET: Admin/ Specifications/Details/5
+        [Authorize(Policy = "admin.specification.details")]
         public async Task<IActionResult> Details(SpecificationSingleQuery query)
         {
 
@@ -42,17 +43,16 @@ namespace E_commerce_.NET5_.Areas.Admin.Controllers
             return View( Specification);
         }
 
-        // GET: Admin/ Specifications/Create
+        [Authorize(Policy = "admin.specification.create")]
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Admin/ Specifications/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "admin.specification.create")]
         public async Task<IActionResult> Create(SpecificationCreateCommand request)
         {
             int id=await _mediator.Send(request);
@@ -64,7 +64,7 @@ namespace E_commerce_.NET5_.Areas.Admin.Controllers
             return View(request);
         }
 
-        // GET: Admin/ Specifications/Edit/5
+        [Authorize(Policy = "admin.specification.edit")]
         public async Task<IActionResult> Edit(SpecificationSingleQuery query)
         {
 
@@ -82,11 +82,10 @@ namespace E_commerce_.NET5_.Areas.Admin.Controllers
             return View(vm);
         }
 
-        // POST: Admin/ Specifications/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "admin.specification.edit")]
         public async Task<IActionResult> Edit( SpecificationEditCommand request)
         {
             int id=await _mediator.Send(request);
@@ -96,8 +95,9 @@ namespace E_commerce_.NET5_.Areas.Admin.Controllers
             
             return View(request);
         }
-
-         [HttpPost]
+       
+        [HttpPost]
+        [Authorize(Policy = "admin.specification.delete")]
         public async Task<IActionResult> Delete( SpecificationRemoveCommand request)
         {
            
